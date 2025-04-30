@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<div class="checkout-container">
+  <div class="header">
+    <span class="back-arrow" onclick="window.location.href='/rooms'">&#8592;</span>
+    <h1>Booking</h1>
+  </div>
+
+  <form class="checkout-form">
+    <fieldset>
+      <legend>Contact Info</legend>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prefix *</label>
+          <select required style="cursor: pointer;" name="prefix">
+            <option value="">--</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" class="name" required style="cursor: text;" name="first_name">
+        </div>
+
+        <div class="form-group">
+          <label>Middle Initial</label>
+          <input type="text" class="name" required style="cursor: text;" name="middle_initial">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" class="name" required style="cursor: text;" name="last_name">
+        </div>
+
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" class="tel" required style="cursor: text;" name="phone">
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Email Address *</label>
+        <input type="email" class="email" required style="cursor: text;" name="email">
+        <small>This is the email we will send your confirmation to.</small>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Booking Dates</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-in Date *</label>
+          <input type="date" class="Check-in" required style="cursor: pointer;" name="checkIn-date">
+        </div>
+
+        <div class="form-group">
+          <label>Check-out Date *</label>
+          <input type="date" class="Check-out" required style="cursor: pointer;" name="checkOut-date">
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="submit-btn">Checkout</button>
+  </form>
+</div>
+</body>
+<!-- Add inside <body> before </body> -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.querySelector(".checkout-form");
+
+  checkoutForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const selectedRoom = JSON.parse(localStorage.getItem("selectedRoom"));
+    if (!selectedRoom) {
+      alert("No room selected.");
+      return;
+    }
+
+    const firstName = checkoutForm.querySelector('input[name="first_name"]').value.trim();
+    const middleInitial = checkoutForm.querySelector('input[name="middle_initial"]').value.trim();
+    const lastName = checkoutForm.querySelector('input[name="last_name"]').value.trim();
+    const fullName = `${firstName} ${middleInitial} ${lastName}`.replace(/\s+/g, " ");
+
+    const checkInDate = new Date(checkoutForm.querySelector('input[name="checkIn-date"]').value);
+    const checkOutDate = new Date(checkoutForm.querySelector('input[name="checkOut-date"]').value);
+
+    const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
+    const nights = Math.ceil(timeDifference / (1000 * 3600 * 24));
+    if (nights <= 0) {
+      alert("Check-out date must be after check-in date.");
+      return;
+    }
+
+    const bookingData = {
+      customer: {
+        prefix: checkoutForm.querySelector('select[name="prefix"]').value,
+        fullName,
+        phone: checkoutForm.querySelector('input[name="phone"]').value,
+        email: checkoutForm.querySelector('input[name="email"]').value,
+      },
+      room: selectedRoom,
+      checkIn: checkInDate,
+      checkOut: checkOutDate,
+      nights: nights
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData)
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText);
+      }
+
+      const result = await response.json();
+      if (result.url) {
+        window.location.href = result.url;
+      }
+    } catch (error) {
+      console.error('Checkout failed:', error.message);
+      alert('Checkout failed: ' + error.message);
+    }
+  });
+});
+</script>
+</html>

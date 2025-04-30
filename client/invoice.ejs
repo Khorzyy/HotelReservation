@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+    .print-btn {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hotel Reservation Invoice</h1>
+  <h2><%= invoice.fullName %></h2>
+  <p><strong>Email:</strong> <%= invoice.email %></p>
+  <p><strong>Phone:</strong> <%= invoice.phone %></p>
+  <p><strong>Check-in:</strong> <%= new Date(invoice.checkIn).toLocaleDateString() %></p>
+  <p><strong>Check-out:</strong> <%= new Date(invoice.checkOut).toLocaleDateString() %></p>
+
+  <table>
+    <tr>
+      <th>Room Name</th>
+      <th>Price/Night</th>
+      <th>Nights</th>
+      <th>Total Amount</th>
+    </tr>
+    <tr>
+      <td><%= invoice.roomName %></td>
+      <td>$<%= (invoice.totalAmount / invoice.nights / 100).toFixed(2) %></td>
+      <td><%= invoice.nights %></td>
+      <td>$<%= (invoice.totalAmount / 100).toFixed(2) %></td>
+    </tr>
+  </table>
+
+  <button class="print-btn" onclick="window.print()">Print Invoice</button>
+</body>
+</html>

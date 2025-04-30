@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+  <!-- navbar -->
+       <!-- Navbar -->
+       <header>
+        <nav class="navbar">
+          <ul>
+            <li>
+              <a href="/home">
+                <span class="secpp">FairWide</span>
+                <span class="pp">Hotel</span></a>
+            </li>
+            <li class="Text"><a href="/about">About Us</a></li>
+            <li class="Text"><a href="/rooms">Accommodation</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- hero section -->
+    <section class="property-container">
+        <h2 class="text-property">Accommodation</h2>
+        <div class="paragraph-container"> <!--this is a img lines img auto center-->
+          <div class="lines">
+            <img src="toppng.com-vector-free-stock-decorative-line-divider-clipart-1281x62.png" alt="Fancy vector divider">
+          </div>
+        </div><!-- this is the end -->
+        <h2 class="text-property">Our Suites</h2>
+        <div class="tag-container">
+          <div class="tag-content">
+            <img src="Mithila-Suite-1.jpg
+            " alt="Mithila Suite">
+            <div class="content-tag">
+              <h3>Mithila Suite</h3>
+              <p>As one of the largest suites at the hotel, this suite is a tribute to the ancient kingdom of Mithila that once spread over significant areas of Bihar. The suite is luxuriously appointed and features authentic artworks from the region.</p>
+              <button onclick='selectRoom("Mithila Suite", 100000)'>BOOK NOW</button>
+              <hr>
+              <p>4 People | 1 King Bed</p>
+              <p>$1000</p>
+              <hr>
+            </div>
+          </div>
+
+          <div class="tag-content">
+            <img src="ResidentalRooms.jpg" alt="Residental">
+            <div class="content-tag">
+              <h3>Residency Suite</h3>
+              <p>As large as the Mithila suite, this suite exudes old world charm. All suites offer a butler service and luxury room & bath amenities. This suite is accommodating enough to entertain an entourage of guests!</p>
+              <button onclick='selectRoom("Residency Suite", 150000)'>BOOK NOW</button>
+              <hr>
+              <p>4 People | 1 King Bed</p>
+              <p>$1500</p>
+              <hr>
+            </div>
+          </div>
+
+          <div class="tag-content">
+            <img src="Svasara-Suite.jpg" alt="Svasara Suite">
+            <div class="content-tag">
+              <h3>Svasara Suite</h3>
+              <p>This down to earth suite room stirs a connection with nature! Despite the city-centre location, one will appreciate the serenity of this urban oasis.  This suite features wildlife photographs from an Indian forest.</p>
+              <button onclick='selectRoom("Svasara Suite", 140000)'>BOOK NOW</button>
+              <hr>
+              <p>4 People | 1 King Bed</p>
+              <p>$1400</p>
+              <hr>
+            </div>
+          </div>
+
+          <div class="tag-content">
+            <img src="oriental-suite-maurya-patna-1.jpg" alt="Rooms">
+            <div class="content-tag">
+              <h3>Oriental Suite</h3>
+              <p>Orient inspired suite with delicate furnishing and Feng Shui elements will make you feel relaxed while you stay here. Mandarin paintings adorn the walls and classical furniture adds charm to this beautiful suite.</p>
+              <button onclick='selectRoom("Oriental Suite", 120000)'>BOOK NOW</button>
+              <hr>
+              <p>4 People | 1 King Bed</p>
+              <p>$1200</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-section logo">
+          <h1><span class="secpp">FairWide</span>
+            <span class="pp">Hotel</span></h1> <!-- Replace with your image path -->
+        </div>
+      
+        <div class="footer-section">
+          <h3>CONTACT INFO</h3>
+          <strong>ADDRESS</strong><br>
+          FairWide Hotel<br>
+          HOS Tjokroaminoto No. 41-43 Bandung, 40172 Indonesia<br><br>
+          Telephone: +62 820410960 – 45<br>
+          Email: contactus@FairWide.com
+        </div>
+      
+        <div class="footer-section">
+          <strong>ROOM RESERVATIONS</strong><br>
+          Mobile: +62 0992361789<br>
+          Email: reservations@FairWide.com<br><br>
+      
+          <strong>BANQUETS RESERVATIONS</strong><br>
+          Mobile: +62 8756782234<br>
+          Email: banquets@FairWide.com<br><br>
+      
+          <strong>SALES & MARKETING</strong><br>
+          Mobile: +62 2901883912<br>
+          Email: marketing@FairWide.com<br><br>
+      
+          <strong>RESTAURANTS</strong><br>
+          Mobile: +62 8731090829<br>
+          Email: restaurants@FairWide.com
+        </div>
+      
+        <div class="footer-section">
+          <strong>COMPANY : BIHAR HOTELS LIMITED</strong><br><br>
+          FOR IPF GRIEVANCES CONTACT<br><br>
+          <strong>Ananda Rizky Pratama Putra</strong><br>
+          Mobile: +62 8220410960<br>
+          Email: nandarizky52378@gmail.com
+        </div>
+      
+        <div class="footer-section">
+          <h3>SITE LINKS</h3>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">CSR Policy</a><br>
+          <a href="#">FAQs</a><br>
+          <a href="#">Feedback Form</a><br>
+          <a href="#">Nidhi</a><br>
+          <a href="#">Saathi</a><br>
+          <a href="#">Sitemap</a>
+        </div>
+      
+        <div class="footer-section">
+          <h3>STAY UP TO DATE</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/khorzyy/"><img src="Instagram.jpg" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@Khorzyy"><img src="Youtube.png" alt="YouTube"></a>
+          </div>
+        </div>
+      </footer>
+      <!-- script -->
+      <script>
+        function selectRoom(name, price) {
+          localStorage.setItem("selectedRoom", JSON.stringify({
+            name,
+            price,
+            quantity: 1
+          }));
+          window.location.href = "/checkout";
+        }
+      </script>           
+</body>
+</html>

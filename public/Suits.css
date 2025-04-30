@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    /* Color */
+      --logo: #F5DEB3;
+      --seclogo: #708090;
+      --bg : #faf7f2;
+      --color-text: #708199;
+      /* Font */
+      --Roboto: 'Roboto';
+      --Roboto-Mono: 'Roboto Mono';
+      --Roboto-Condensed: 'Roboto Condensed';
+      --Ubuntu: 'Ubuntu';
+      --Quicksand: 'Quicksand';
+  }
+  
+  *{ 
+      margin: 0;
+      padding: 0;
+  }
+  body{
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: var(--Ubuntu), sans-serif;
+      font-weight: 350;
+      scroll-behavior: smooth;
+  }
+
+  /* navbar */
+header{
+    display: block;
+    unicode-bidi: isolate;
+    flex-wrap: wrap;
+  }
+  nav{
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      top: 1vh;
+      left: 50%;
+      transform: translateX(-50.5%);
+      width: 90%;
+      z-index: 800;
+      box-sizing: border-box;
+      border-radius: 8.5px;
+      background-color: #ffffff;
+      font-size: 80%;
+  }
+  nav ul{
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+  nav li{
+      height: 50px;
+      flex-wrap: calc(2/1);
+  }
+  nav a{
+      height: 100%;
+      padding: 0 30px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+      font-size: 1.4em;
+      position: relative;
+      flex-wrap: calc(2/1);
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the link */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after{
+    width: 100%;
+  }
+  nav li:first-child{
+      margin-right: auto;
+      font-weight: bolder;
+  }
+  .sidebar{
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 50vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+    flex-direction: column;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -3%;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.sidebar li:first-child{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 25%;
+}
+.menu-button{
+    display: none;
+}
+.pp{
+  color: var(--logo);
+}
+.secpp{
+  color: var(--seclogo);
+}
+
+/* room */
+.container {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 70px;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #6c4b25;
+  }
+  
+  a {
+    color: #a38450;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .room-card {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+  }
+  
+  .room-card img {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .room-details {
+    flex-grow: 1;
+  }
+  
+  .room-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  .room-info {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .features {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3e2f1c;
+    margin-bottom: 5px;
+  }
+  
+  .book-btn {
+    background-color: #a38450;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .book-btn:hover {
+    background-color: #8a6b3e;
+  }
