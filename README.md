@@ -43,5 +43,5 @@
 
 <h2>♻️ Self-Reflection</h2>
 <p>Honestly i feel, really proud to be able to build with just my little knowledge and zero expperience. Looking back to past, this is a really great progress. I hope i can keep improving until im really good at this. For now this is a really big achievement for me. Thanks to myself</p><br>
-<p>NOTHING IS IMPOSSIBLE IF I CAN YOU CAN DOING IT TO JUST NEED DISCIPLINE I KNOW DISCIPLINE IS HARD BUT I CAN YOU CAN TO</p>
+<p>NOTHING IS IMPOSSIBLE IF I CAN YOU CAN DO IT, JUST NEED DISCIPLINE I KNOW DISCIPLINE IS HARD BUT I CAN YOU CAN</p>
 <p>That's all cya everyone let meet in the best myself and yourself</p>
